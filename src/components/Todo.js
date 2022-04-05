@@ -6,6 +6,14 @@ import Backdrop from "./Backdrop";
 function Todo(props) {
   const [deleteModalOpen, setDeleteModalOpen] = useState(false);
 
+  //Delete modal handlers
+  function deleteModalOpenHandler() {
+    setDeleteModalOpen(true);
+  }
+  function deleteModalCloseHandler() {
+    setDeleteModalOpen(false);
+  }
+
   return (
     <div className="card">
       <div>
@@ -18,14 +26,18 @@ function Todo(props) {
         <button className="btn edit">
           Edit
         </button>
-        <button className="btn delete">
+        <button className="btn delete" onClick={deleteModalOpenHandler}>
           Delete
         </button>
       </div>
       {deleteModalOpen ? (
         <section>
-          <DeleteModal />
-          <Backdrop />
+          <DeleteModal
+            deleteId={props.id}
+            closeModal={deleteModalCloseHandler}
+            getItems={props.getItems}
+          />
+          <Backdrop closeModal={deleteModalCloseHandler} />
         </section>
       ) : null}
     </div>
