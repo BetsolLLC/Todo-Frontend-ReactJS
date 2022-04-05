@@ -1,13 +1,128 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+* {
+  box-sizing: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+  font-family: sans-serif;
+  margin: 3%;
+  background-color: #2873e4;
+  background: linear-gradient(to bottom right, darkblue, darkred) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+h1 {
+  color: white;
+  opacity: 95%;
+  font-family: cursive;
+  text-align: center;
+}
+
+input[type='text'] {
+  font: inherit;
+  padding: 0.7%;
+  margin: 2% 0%;
+  cursor: pointer;
+  border-radius: 3px;
+  color: black;
+  border: 1px solid black;
+  width: 80%;
+}
+
+input[type="checkbox"] {
+  float: left;
+  width: 7%;
+  vertical-align: middle;
+}
+
+input[type="checkbox"]:checked {
+  pointer-events: none;
+}
+
+.btn {
+  font: inherit;
+  padding: 0.5rem 1.5rem;
+  cursor: pointer;
+  border-radius: 4px;
+  background-color: #113af5;
+  color: white;
+  border: 1px solid #113af5;
+  margin: 0.2rem 0.3rem;
+}
+
+.btn:hover {
+  background-color: #6a9eff;
+  border-color: #6a9eff;
+}
+
+.btn--alt {
+  background-color: transparent;
+  color: #113af5;
+}
+
+.btn--alt:hover {
+  background-color: #d6d1d1;
+}
+
+.card > .actions > .btn {
+  float: right;
+  color: black;
+  background-color: transparent;
+}
+
+.btn.edit {
+  border-color: green;
+}
+
+.btn.delete {
+  border-color: red;
+}
+
+.btn.edit:hover {
+  background-color: lightgreen;
+}
+
+.btn.delete:hover {
+  background-color: lightsalmon;
+}
+
+.card {
+  background-color: white;
+  border-radius: 4px;
+  box-shadow: 0 1px 4px #5a595933;
+  padding: 0.5%;
+  width: 30%;
+  margin: 1%;
+  display: inline-table;
+}
+
+.actions {
+  text-align: center;
+}
+
+.modal {
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  background-color: white;
+  padding: 1%;
+  text-align: center;
+  width: 30%;
+  z-index: 10;
+  position: absolute;
+  float: left;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.backdrop {
+  position: fixed;
+  z-index: 1;
+  background-color: rgba(0, 0, 0, 0.75);
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  left: 0;
 }

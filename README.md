@@ -1,70 +1,76 @@
-# Getting Started with Create React App
+# Frontend for Todo App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Setup
+1. Create a new React App Using - `npx create-react-app new-app`
+2. Navigate to the App project directory - `cd new-app`
 
-## Available Scripts
-
-In the project directory, you can run:
-
+3. In the project directory, you can run:
+### `npm install` 
+Installs the necessary dependencies
 ### `npm start`
+Runs the app in the development mode.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Open [http://localhost:3000](http://localhost:3000) to view it in your browser if it does not automatically open on the 'npm start' command.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Notes
 
-### `npm test`
+## React JS Introduction 
+### Components
+A Component is the core building block of a React application. These are  independent and reusable bits of code. Each component exists in the same space, but they work independently from one another and merge all in a parent component, which will be the final UI of your application.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### States
+React components have a built-in state object. The state object is where you store property values that belongs to the component. When the state object changes, the component re-renders.
 
-### `npm run build`
+### Props
+Props stand for "Properties." It is an object which stores the values of attributes of a tag and work similar to the HTML attributes. It gives a way to pass data from one component to other components. Props are passed to the component in the same way as arguments passed in a function.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## React Hooks
+Hooks allows you to use state and other React features without writing a class. Hooks are the functions which "hook into" react states from function components. This allows us to manage component's state or perform an after effect when certain changes occur in state(s) without writing a class. 
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### useState
+The React useState Hook allows us to track state in a function component. State generally refers to data or properties that need to be tracking in an application.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+useState accepts an initial state and returns two values:\
+`const [stateVariable, setStateVariableFunction] = useSate(initialState)`
 
-### `npm run eject`
+### useEffect
+The useEffect Hook allows you to perform side effects in your components. Some examples of side effects are: fetching data, directly updating the DOM, and timers.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+useEffect accepts two arguments: \
+`useEffect(function, dependency_list)`
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### useRef
+The useRef Hook allows you to persist values between renders. It can be used to store a mutable value that does not cause a re-render when updated.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+It is generally used to map to the value of a HTML element like below:\
+`const inputText = useRef()`\
+`<input type="text" ref="inputText"/>`
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+To retrieve the value of the input element at any given point, use:\
+`const retrievedValue = inputText.current.value`
 
-## Learn More
+## Advances JS
+### Array de-structuring
+We may have an array or object that we are working with, but we only need some of the items contained in these. De-structuring makes it easy to extract only what is needed.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Example:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+`const vehicles= [‘Mustang’ , ‘f-150’, ‘Expedition’];`\
+`const [car, truck, suv] = vehicles;`
 
-### Code Splitting
+So, here variables `car = 'Mustang'`, `truck = 'f-150'` and `suv = 'Expedition'`
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## Spread Operator
+The JavaScript spread operator (...) allows us to quickly copy all or part of an existing array or object into another array or object respectively.\
 
-### Analyzing the Bundle Size
+Example: 
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Arrays\
+`const array1 = [1, 2, 3];`\
+`const array2 = [4, 5, 6];`\
+`const finalArray = […array1, …array2]; => [1,2,3,4,5,6]`
 
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Objects\
+`const object1 = {'name':'xyz', id: 1}`\
+`const object2 = {'age': 50}`\
+`const finalObject = {...object1, ...Object2}; => {'name':'xyz','id':1,'age':50}`
