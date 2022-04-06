@@ -16,11 +16,9 @@ function Todo(props) {
   }
 
   function completeItem() {
-    const completeItem = { id: props.id };
-    fetch(url, {
-      method: "PATCH",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(completeItem),
+    const patchUrl = url + "/update/" + props.id;
+    fetch(patchUrl, {
+      method: "PATCH"
     }).then((response) => {
       if (!response.ok) {
         alert("Completing task failed");
