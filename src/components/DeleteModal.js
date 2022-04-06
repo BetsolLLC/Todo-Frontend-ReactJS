@@ -2,13 +2,9 @@ import {url} from "../App";
 
 function DeleteModal(props) {
   function confirmHandler() {
-    const deleteData = {
-      id: props.deleteId
-    };
-    fetch(url, {
-      method: "DELETE",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(deleteData)
+    const deleteUrl = url + "/delete/" + props.deleteId; 
+    fetch(deleteUrl, {
+      method: "DELETE"
     }).then((response) => {
       if(!response.ok) {
         alert('Delete failed');

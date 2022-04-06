@@ -2,7 +2,7 @@ import React from "react";
 import Todo from "./components/Todo";
 import { useRef, useState, useEffect } from "react";
 
-export const url = "http://localhost:5000/api/v1/"; 
+export const url = "endpoint url"; 
 
 function App() {
   const [todoList, setTodoList] = useState([]);
@@ -26,11 +26,12 @@ function App() {
 
   function submitHandler(event) {
     event.preventDefault();
+    const addUrl = url + "/add";
     const contentInput = todoContentRef.current.value;
     const addData = {
       title:contentInput
     };
-    fetch(url, {
+    fetch(addUrl, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(addData)
