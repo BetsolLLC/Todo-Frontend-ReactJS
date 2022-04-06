@@ -6,13 +6,13 @@ function EditModal(props) {
 
   function submitHandler(event) {
     event.preventDefault();
+    const putUrl = url + "/edit/" + props.editId
     const editedContent = editContentRef.current.value;
     const editData = {
-      id: props.editId,
       title: editedContent,
       completed: props.completed
     };
-    fetch(url, {
+    fetch(putUrl, {
       method: "PUT",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(editData),
