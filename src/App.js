@@ -2,6 +2,8 @@ import React from "react";
 import Todo from "./components/Todo";
 import { useRef, useState, useEffect } from "react";
 
+export const url = "http://localhost:5000/api/v1/";
+
 function App() {
   const [todoList, setTodoList] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
@@ -9,7 +11,6 @@ function App() {
 
   function getItems() {
     setIsLoading(true);
-    const url = "http://localhost:5000/api/v1/";
     fetch(url, {
       method: "GET"
     })
@@ -26,7 +27,6 @@ function App() {
   function submitHandler(event) {
     event.preventDefault();
     const contentInput = todoContentRef.current.value;
-    const url = "http://localhost:5000/api/v1/";
     const addData = {
       title:contentInput
     };
