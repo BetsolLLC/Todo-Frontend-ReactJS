@@ -2,6 +2,7 @@ import React from "react";
 import { useState } from "react";
 import DeleteModal from "./DeleteModal";
 import Backdrop from "./Backdrop";
+import {url} from "../App";
 
 function Todo(props) {
   const [deleteModalOpen, setDeleteModalOpen] = useState(false);
@@ -15,7 +16,6 @@ function Todo(props) {
   }
 
   function completeItem() {
-    const url = "http://localhost:5000/api/v1/";
     const completeItem = { id: props.id };
     fetch(url, {
       method: "PATCH",

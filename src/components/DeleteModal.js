@@ -1,6 +1,7 @@
+import {url} from "../App";
+
 function DeleteModal(props) {
   function confirmHandler() {
-    const url = "http://localhost:5000/api/v1/";
     const deleteData = {
       id: props.deleteId
     };
