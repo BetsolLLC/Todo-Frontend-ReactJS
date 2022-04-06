@@ -15,7 +15,7 @@ function Todo(props) {
   }
 
   function completeItem() {
-    const url = "";
+    const url = "http://localhost:5000/api/v1/";
     const completeItem = { id: props.id };
     fetch(url, {
       method: "PATCH",
