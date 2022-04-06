@@ -14,11 +14,26 @@ function Todo(props) {
     setDeleteModalOpen(false);
   }
 
+  function completeItem() {
+    const url = "http://localhost:5000/api/v1/";
+    const completeItem = { id: props.id };
+    fetch(url, {
+      method: "PATCH",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(completeItem),
+    }).then((response) => {
+      if (!response.ok) {
+        alert("Completing task failed");
+      }
+      props.getItems();
+    });
+  }
+
   return (
     <div className="card">
       <div>
         {
-          <input type="checkbox"/>
+          <input type="checkbox" onClick={completeItem} checked={props.completed ? "checked" : ""} readOnly/>
         }
         <p>{props.title}</p>
       </div>
