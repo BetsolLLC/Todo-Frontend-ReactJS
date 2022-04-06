@@ -1,4 +1,5 @@
 import { useRef } from "react";
+import {url} from "../App";
 
 function EditModal(props) {
   const editContentRef = useRef();
@@ -6,7 +7,6 @@ function EditModal(props) {
   function submitHandler(event) {
     event.preventDefault();
     const editedContent = editContentRef.current.value;
-    const url = "http://localhost:5000/api/v1/";
     const editData = {
       id: props.editId,
       title: editedContent,
