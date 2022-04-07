@@ -26,7 +26,7 @@ function Todo(props) {
   }
 
   function completeItem() {
-    const patchUrl = url + "/update/" + props.id;
+    const patchUrl = url;
     fetch(patchUrl, {
       method: "PATCH"
     }).then((response) => {

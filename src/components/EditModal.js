@@ -6,7 +6,7 @@ function EditModal(props) {
 
   function submitHandler(event) {
     event.preventDefault();
-    const putUrl = url + "/edit/" + props.editId
+    const putUrl = url + props.editId
     const editedContent = editContentRef.current.value;
     const editData = {
       title: editedContent,

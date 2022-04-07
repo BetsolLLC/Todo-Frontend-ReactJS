@@ -2,7 +2,7 @@ import React from "react";
 import Todo from "./components/Todo";
 import { useRef, useState, useEffect } from "react";
 
-export const url = "https://todo-app-ayush.herokuapp.com"; 
+export const url = "endpoint url"; 
 
 function App() {
   const [todoList, setTodoList] = useState([]);
@@ -27,7 +27,7 @@ function App() {
   function submitHandler(event) {
     event.preventDefault();
     const contentInput = todoContentRef.current.value;
-    const addUrl = url + "/add";
+    const addUrl = url;
     const addData = {
       title:contentInput
     };
