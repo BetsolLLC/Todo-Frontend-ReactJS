@@ -12,13 +12,11 @@ Runs the app in the development mode.
 
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser if it does not automatically open on the 'npm start' command.
 
-Please start the  chrome session by using this command in Command prompt.
+Note: Please start the  chrome session by using this command in Command prompt.
 
 "C:\Program Files\Google\Chrome\Application\chrome.exe" --disable-web-security  --user-data-dir="C:\tmpChromeSession"
 
 Then, navigate to url - http://localhost:3000 to open the APP.
-
-## Notes
 
 ## React JS Introduction 
 ### Components
