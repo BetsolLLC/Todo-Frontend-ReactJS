@@ -26,7 +26,7 @@ function App() {
 
   function submitHandler(event) {
     event.preventDefault();
-    const addUrl = url + "/add";
+    const addUrl = url;
     const contentInput = todoContentRef.current.value;
     const addData = {
       title:contentInput

@@ -2,7 +2,7 @@ import {url} from "../App";
 
 function DeleteModal(props) {
   function confirmHandler() {
-    const deleteUrl = url + "/delete/" + props.deleteId; 
+    const deleteUrl = url + "/" + props.deleteId; 
     fetch(deleteUrl, {
       method: "DELETE"
     }).then((response) => {
