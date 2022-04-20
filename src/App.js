@@ -2,7 +2,7 @@ import React from "react";
 import Todo from "./components/Todo";
 import { useRef, useState, useEffect } from "react";
 
-export const url = "https://flask-class-based-hitesh.herokuapp.com/api/v1"; 
+export const url = "Backend deployment URL from Heroku"; 
 
 function App() {
   const [todoList, setTodoList] = useState([]);
