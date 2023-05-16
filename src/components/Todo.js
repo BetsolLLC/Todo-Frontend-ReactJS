@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import DeleteModal from "./DeleteModal";
-import Backdrop from "./Backdrop";
+
 
 function Todo(props) {
   const [deleteModalOpen, setDeleteModalOpen] = useState(false);
@@ -25,7 +25,7 @@ function Todo(props) {
       {deleteModalOpen ? (
         <section>
           <DeleteModal />
-          <Backdrop />
+        
         </section>
       ) : null}
     </div>
